@@ -180,5 +180,11 @@ public class Calculator implements ActionListener {
              textField.setText(textField.getText()+string.charAt(i));
             }
         }
+
+        if (e.getSource() == neg_btn){
+            Double temp = Double.parseDouble(textField.getText());
+            temp *= -1;
+            textField.setText(String.valueOf(temp));
+        }
     }
 }
