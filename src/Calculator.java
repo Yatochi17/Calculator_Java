@@ -29,7 +29,50 @@ public class Calculator implements ActionListener {
         textField.setFont(myFont);
         textField.setEditable(false);
 
+        add_btn = new JButton("+");
+        sub_btn = new JButton("-");
+        mul_btn = new JButton("*");
+        div_btn = new JButton("/");
+        dec_btn = new JButton(".");
+        equ_btn = new JButton("=");
+        del_btn = new JButton("Delete");
+        clr_btn = new JButton("Clear");
 
+        fxButtons[0] = add_btn;
+        fxButtons[1] = sub_btn;
+        fxButtons[2] = mul_btn;
+        fxButtons[3] = div_btn;
+        fxButtons[4] = dec_btn;
+        fxButtons[5] = equ_btn;
+        fxButtons[6] = del_btn;
+        fxButtons[7] = clr_btn;
+
+        for(int i = 0; i < 8 ; i++){
+            fxButtons[i].addActionListener(this);
+            fxButtons[i].setFont(myFont);
+            fxButtons[i].setFocusable(false);
+        }
+
+
+        for(int i = 0; i < 10 ; i++){
+            numberButtons[i] = new JButton(String.valueOf(i));
+            numberButtons[i].addActionListener(this);
+            numberButtons[i].setFont(myFont);
+            numberButtons[i].setFocusable(false);
+        }
+
+        del_btn.setBounds(50, 430, 145, 50 );
+        clr_btn.setBounds(205, 430, 145, 50);
+
+        panel= new JPanel();
+        panel.setBounds(50, 100, 300, 300);
+        panel.setLayout(new GridLayout(4, 4, 10, 10));
+        panel.setBackground(Color.GRAY);
+
+        frame.add(del_btn);
+        frame.add(clr_btn);
+        frame.add(textField);
+        frame.setVisible(true);
 
         frame.add(textField);
         frame.setVisible(true);
